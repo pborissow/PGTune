@@ -19,22 +19,22 @@ console.log(config);
 
 Sample output:
 ```javascript
-checkpoint_completion_target: 0.9
-default_statistics_target: 100
-effective_cache_size: 50331648
-effective_io_concurrency: 200
-maintenance_work_mem: 2097152
-max_connections: 250
-max_parallel_maintenance_workers: 4
-max_parallel_workers: 8
-max_parallel_workers_per_gather: 4
-max_wal_size: 4194304
-max_worker_processes: 8
-min_wal_size: 1048576
-random_page_cost: 1.1
-shared_buffers: 16777216
-wal_buffers: 16384
-work_mem: 16777
+checkpoint_completion_target = 0.9
+default_statistics_target = 100
+effective_cache_size = 48GB
+effective_io_concurrency = 200
+maintenance_work_mem = 2GB
+max_connections = 250
+max_parallel_maintenance_workers = 4
+max_parallel_workers = 8
+max_parallel_workers_per_gather = 4
+max_wal_size = 4GB
+max_worker_processes = 8
+min_wal_size = 1GB
+random_page_cost = 1.1
+shared_buffers = 16GB
+wal_buffers = 16MB
+work_mem = 17MB
 ```
 
 ## Credit
