@@ -42,5 +42,5 @@ Inspired by this awesome site:
  * https://pgtune.leopard.in.ua/
 
 Source code adopted from [here](https://github.com/le0pard/pgtune/):
-   * [constants.js](/le0pard/pgtune/blob/master/assets/selectors/configuration.js)
-   * [configuration.js](/le0pard/pgtune/blob/master/assets/reducers/configuration/constants.js)
+   * [constants.js](https://github.com/le0pard/pgtune/blob/master/assets/selectors/configuration.js)
+   * [configuration.js](https://github.com/le0pard/pgtune/blob/master/assets/reducers/configuration/constants.js)
