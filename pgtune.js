@@ -463,14 +463,14 @@ const warningInfoMessages = createSelector(
 
 
   //Return response
-    const results = {};
+    var results = {};
     checkpointSegments.forEach((setting)=>{
         results[setting.key] = setting.value;
     });
     parallelSettings.forEach((setting)=>{
         results[setting.key] = setting.value;
     });
-    return merge(results, {
+    results = merge(results, {
         max_connections: maxConnections,
         shared_buffers: sharedBuffers,
         effective_cache_size: effectiveCacheSize,
@@ -483,4 +483,31 @@ const warningInfoMessages = createSelector(
         work_mem: workMem
     });
 
+    ['shared_buffers','effective_cache_size','maintenance_work_mem',
+    'wal_buffers','work_mem','min_wal_size','max_wal_size'].forEach((key)=>{
+        var val = results[key];
+        if (val>=1024){
+            val = val/1024;
+            if (val>=1024){
+                val = val/1024;
+                results[key]= Math.ceil(val) +'GB';
+            }
+            else{
+                results[key]= Math.ceil(val) +'MB';
+            }
+        }
+        else{
+            results[key] = val +'kB';
+        }
+    });
+
+    var arr = [];
+    for (var key in results) {
+        if (results.hasOwnProperty(key)){
+            arr.push(key + " = " + results[key]);
+        }
+    }
+    arr.sort();
+
+    return arr.join("\n");
 };
